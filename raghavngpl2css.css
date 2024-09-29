@@ -1,0 +1,123 @@
+/* General Styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Helvetica', sans-serif; /* Change font to Helvetica */
+}
+
+body {
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start; /* Align items to the top */
+    align-items: center; /* Center horizontally */
+    background-color: #f4f4f4;
+    color: #333;
+    text-align: center; /* Center align text */
+    padding-top: 50px; /* Add some padding from the top */
+}
+
+/* Centered Intro Section */
+header {
+    display: flex;
+    flex-direction: column; /* Align items vertically */
+    align-items: center; /* Center items horizontally */
+}
+
+.intro img {
+    width: 500px; /* Set a specific width */
+    height: auto; /* Maintain aspect ratio */
+}
+
+.intro h1 {
+    font-size: 3rem;
+    font-weight: bold;
+    margin: 10px 0; /* Adjusted margin for better spacing */
+    color: #2c3e50;
+}
+
+.intro p {
+    font-size: 1rem; /* Reduced font size for the introductory paragraph */
+    color: #7f8c8d;
+}
+
+/* Centered links */
+.intro a {
+    text-decoration: none;
+    color: #3498db;
+    font-weight: bold;
+    cursor: pointer;
+    margin: 0 10px; /* Add some space between links */
+}
+
+.intro a:hover {
+    color: #2980b9;
+}
+
+/* Footer */
+footer {
+    position: fixed;
+    bottom: 10px;
+    width: 100%;
+    text-align: center;
+    font-size: 0.9rem;
+    color: #95a5a6;
+}
+
+/* Ensure responsiveness */
+@media (max-width: 768px) {
+    .intro h1 {
+        font-size: 2.5rem;
+    }
+
+    .intro p {
+        font-size: 0.9rem; /* Further reduce size for mobile view */
+    }
+
+    .intro img {
+        width: 150px; /* Smaller size for mobile view */
+    }
+}
+
+/* Polygons Container */
+.polygons-container {
+    display: flex;
+    justify-content: space-around;
+    width: 100%;
+    max-width: 900px; /* Adjust based on preference */
+    margin: 20px 0;
+}
+
+/* Polygon Style */
+.polygon {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 150px; /* Adjust polygon size */
+    height: 150px;
+    text-decoration: none;
+    color: rgb(250, 24, 24);
+    background-color: #030303;
+    font-weight: bold;
+    position: relative;
+    clip-path: polygon(50% 0%, 100% 25%, 100% 75%, 50% 100%, 0% 75%, 0% 25%); /* Hexagon Shape */
+    transition: background-color 0.3s ease;
+}
+
+.polygon:hover {
+    background-color: #2980b9; /* Hover effect */
+}
+
+/* Text inside the polygons */
+.polygon::before {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+    font-size: 1rem; /* Adjust font size */
+    line-height: 1.5rem;
+    z-index: 1;
+}
