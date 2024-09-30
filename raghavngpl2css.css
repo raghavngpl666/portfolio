@@ -3,25 +3,24 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    font-family: 'Helvetica', sans-serif; /* Change font to Helvetica */
+    font-family: 'Helvetica', sans-serif;
 }
 
 body {
     height: 100vh;
     display: flex;
     flex-direction: column;
-    justify-content: flex-start; /* Align items to the top */
+    justify-content: center; /* Align items to the center vertically */
     align-items: center; /* Center horizontally */
     background-color: #f4f4f4;
     color: #333;
-    text-align: center; /* Center align text */
-    padding-top: 50px; /* Add some padding from the top */
+    text-align: center;
+    padding-top: 50px;
 }
 
-/* Centered Intro Section */
 header {
     display: flex;
-    flex-direction: column; /* Align items vertically */
+    flex-direction: column;
     align-items: center; /* Center items horizontally */
 }
 
@@ -33,26 +32,80 @@ header {
 .intro h1 {
     font-size: 3rem;
     font-weight: bold;
-    margin: 10px 0; /* Adjusted margin for better spacing */
+    margin: 10px 0;
     color: #2c3e50;
 }
 
 .intro p {
-    font-size: 1rem; /* Reduced font size for the introductory paragraph */
+    font-size: 1rem;
     color: #7f8c8d;
 }
 
-/* Centered links */
-.intro a {
-    text-decoration: none;
-    color: #3498db;
-    font-weight: bold;
-    cursor: pointer;
-    margin: 0 10px; /* Add some space between links */
+/* Polygons Container */
+.polygons-container {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 20px;
+    width: 100%;
+    max-width: 900px;
+    margin: 20px auto;
 }
 
-.intro a:hover {
-    color: #2980b9;
+/* Default Polygon Styles */
+.polygon {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 150px;
+    height: 150px;
+    text-decoration: none;
+    color: white;
+    font-weight: bold;
+    position: relative;
+    transition: all 0.5s ease;
+}
+
+/* Unique styles for each polygon */
+.about-me {
+    background-color: #e74c3c;
+    clip-path: polygon(47% 5%, 59% 37%, 73% 25%, 84% 14%, 68% 43%, 92% 56%, 69% 55%, 91% 75%, 60% 66%, 62% 97%, 50% 66%, 40% 94%, 38% 67%, 15% 87%, 34% 58%, 5% 55%, 23% 47%, 13% 27%, 38% 44%);
+}
+
+.projects {
+    background-color: #2ecc71;
+    clip-path: polygon(47% 5%, 59% 37%, 73% 25%, 84% 14%, 68% 43%, 92% 56%, 69% 55%, 91% 75%, 60% 66%, 62% 97%, 50% 66%, 40% 94%, 38% 67%, 15% 87%, 34% 58%, 5% 55%, 23% 47%, 13% 27%, 38% 44%);
+}
+
+.showreel {
+    background-color: #3498db;
+    clip-path: polygon(47% 5%, 59% 37%, 73% 25%, 84% 14%, 68% 43%, 92% 56%, 69% 55%, 91% 75%, 60% 66%, 62% 97%, 50% 66%, 40% 94%, 38% 67%, 15% 87%, 34% 58%, 5% 55%, 23% 47%, 13% 27%, 38% 44%);
+}
+
+.contact {
+    background-color: #f1c40f;
+    clip-path: polygon(47% 5%, 59% 37%, 73% 25%, 84% 14%, 68% 43%, 92% 56%, 69% 55%, 91% 75%, 60% 66%, 62% 97%, 50% 66%, 40% 94%, 38% 67%, 15% 87%, 34% 58%, 5% 55%, 23% 47%, 13% 27%, 38% 44%);
+}
+
+/* Hover Effects */
+.about-me:hover {
+    clip-path: polygon(47% 5%, 61% 17%, 73% 25%, 84% 14%, 94% 32%, 92% 56%, 84% 65%, 91% 75%, 78% 83%, 62% 97%, 51% 88%, 40% 94%, 14% 91%, 22% 71%, 13% 68%, 5% 55%, 12% 45%, 13% 27%, 14% 8%);
+    background-color: #c0392b;
+}
+
+.projects:hover {
+    clip-path: polygon(42% 38%, 64% 3%, 63% 38%, 84% 14%, 94% 32%, 73% 46%, 96% 47%, 91% 75%, 65% 79%, 61% 90%, 46% 74%, 40% 88%, 14% 91%, 27% 80%, 4% 75%, 5% 55%, 15% 47%, 7% 14%, 28% 37%);
+    background-color: #5418e1;
+}
+
+.showreel:hover {
+    clip-path: polygon(44% 18%, 64% 3%, 65% 28%, 75% 22%, 85% 27%, 94% 43%, 93% 59%, 79% 63%, 63% 63%, 61% 90%, 54% 69%, 40% 88%, 24% 81%, 24% 69%, 3% 62%, 19% 52%, 26% 39%, 7% 14%, 25% 19%);
+    background-color: #2980b9;
+}
+
+.contact:hover {
+    clip-path: polygon(44% 18%, 64% 3%, 61% 34%, 93% 21%, 75% 38%, 90% 46%, 76% 58%, 94% 78%, 70% 76%, 61% 90%, 45% 75%, 21% 93%, 27% 78%, 23% 66%, 3% 62%, 19% 52%, 26% 39%, 7% 14%, 25% 19%);
+    background-color: #f39c12;
 }
 
 /* Footer */
@@ -65,59 +118,22 @@ footer {
     color: #95a5a6;
 }
 
-/* Ensure responsiveness */
+/* Responsive adjustments */
 @media (max-width: 768px) {
+    .polygon {
+        width: 120px;
+        height: 120px;
+    }
+
     .intro h1 {
         font-size: 2.5rem;
     }
 
     .intro p {
-        font-size: 0.9rem; /* Further reduce size for mobile view */
+        font-size: 0.9rem;
     }
 
     .intro img {
-        width: 150px; /* Smaller size for mobile view */
+        width: 150px;
     }
-}
-
-/* Polygons Container */
-.polygons-container {
-    display: flex;
-    justify-content: space-around;
-    width: 100%;
-    max-width: 900px; /* Adjust based on preference */
-    margin: 20px 0;
-}
-
-/* Polygon Style */
-.polygon {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    width: 150px; /* Adjust polygon size */
-    height: 150px;
-    text-decoration: none;
-    color: rgb(250, 24, 24);
-    background-color: #030303;
-    font-weight: bold;
-    position: relative;
-    clip-path: polygon(50% 0%, 100% 25%, 100% 75%, 50% 100%, 0% 75%, 0% 25%); /* Hexagon Shape */
-    transition: background-color 0.3s ease;
-}
-
-.polygon:hover {
-    background-color: #2980b9; /* Hover effect */
-}
-
-/* Text inside the polygons */
-.polygon::before {
-    content: '';
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    text-align: center;
-    font-size: 1rem; /* Adjust font size */
-    line-height: 1.5rem;
-    z-index: 1;
 }

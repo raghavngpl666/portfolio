@@ -6,17 +6,6 @@ window.onload = function() {
     const year = new Date().getFullYear();
     footer.innerHTML = year;
 
-    // Open links in new tabs when clicked
-    document.getElementById('about-link').addEventListener('click', function(e) {
-        e.preventDefault();
-        window.open('https://example.com/about', '_blank'); // Update with actual URL
-    });
-
-    document.getElementById('projects-link').addEventListener('click', function(e) {
-        e.preventDefault();
-        window.open('https://example.com/projects', '_blank'); // Update with actual URL
-    });
-
     // Image cycling
     const images = [
         'website assets/asset6.png',
