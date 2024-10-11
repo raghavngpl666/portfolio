@@ -1,0 +1,31 @@
+/* Fullscreen video styling */
+#bg-video {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    z-index: -1; /* Keep the video in the background */
+}
+
+/* Hide the default mouse pointer */
+body {
+    cursor: none; /* Hides the default pointer */
+    overflow: hidden;
+    margin: 0;
+    padding: 0;
+    height: 100vh;
+}
+
+/* Style for the abstract mouse pointer */
+.pointer-shape {
+    position: absolute;
+    width: 40px;  /* Adjust size */
+    height: 40px; /* Adjust size */
+    background: rgb(255, 0, 0); /* Base color */
+    mix-blend-mode: exclusion; /* Blending mode */
+    pointer-events: none; /* Prevent interactions */
+    z-index: 1000; /* Ensure it stays on top */
+    animation: morph 1.5s infinite alternate; /* Apply morphing animation */
+}
